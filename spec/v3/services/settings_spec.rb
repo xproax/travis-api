@@ -91,7 +91,7 @@ describe Travis::API::V3::Services::Settings, set_app: true do
     end
 
     describe 'authenticated, existing repo' do
-      let(:params) { JSON.dump('settings.build_pushes' => false }
+      let(:params) { JSON.dump('settings.build_pushes' => false) }
 
       before do
         repo.update_attributes(settings: JSON.dump('maximum_number_of_builds' => 20))
