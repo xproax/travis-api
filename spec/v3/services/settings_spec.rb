@@ -91,7 +91,7 @@ describe Travis::API::V3::Services::Settings, set_app: true do
     end
 
     describe 'authenticated, existing repo' do
-      let(:params) { JSON.dump('settings.build_pushes' => false, 'settings.maximum_number_of_builds' => 4) }
+      let(:params) { JSON.dump('settings.build_pushes' => false }
 
       before do
         repo.update_attributes(settings: JSON.dump('maximum_number_of_builds' => 20))
@@ -105,9 +105,8 @@ describe Travis::API::V3::Services::Settings, set_app: true do
           'builds_only_with_travis_yml' => false,
           'build_pushes' => false,
           'build_pull_requests' => true,
-          'maximum_number_of_builds' => 4
+          'maximum_number_of_builds' => 20
         )
-        expect(repo.reload.user_settings.maximum_number_of_builds).to eq(4)
       end
     end
   end
