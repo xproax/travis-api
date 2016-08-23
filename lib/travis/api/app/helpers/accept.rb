@@ -12,7 +12,7 @@ class Travis::Api::App
         TOKEN      = /[^#{SEPARATORS}]+/
         attr_reader :type, :subtype, :quality, :version, :params
         def initialize(accept_string)
-          puts "DEBUG: Accept String: #{accept_string.inspect}"
+          puts "DEBUG: Accept String: #{accept_string.inspect}" unless accept_string == "image/png" || accept_string == "*/*"
           @type, @subtype, @quality, @version, @params = parse(accept_string)
         end
 
