@@ -18,6 +18,7 @@ module Travis
             end
 
             def data
+              puts "DEBUG: I'm in v2 line 21 travis/api/serialize/v2/http/build.rb:21"
               {
                 'build'  => build_data(build),
                 'commit' => commit_data(build.commit, build.repository),

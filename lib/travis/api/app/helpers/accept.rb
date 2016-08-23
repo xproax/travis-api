@@ -4,7 +4,7 @@ class Travis::Api::App
   module Helpers
     module Accept
       HEADER_FORMAT   = /vnd\.travis-ci\.(\d+)\+(\w+)/
-      DEFAULT_VERSION = 'v1'
+      DEFAULT_VERSION = 'v2'
       DEFAULT_FORMAT  = 'json'
 
       class Entry
@@ -12,6 +12,7 @@ class Travis::Api::App
         TOKEN      = /[^#{SEPARATORS}]+/
         attr_reader :type, :subtype, :quality, :version, :params
         def initialize(accept_string)
+          puts "DEBUG: Accept String: #{accept_string.inspect}"
           @type, @subtype, @quality, @version, @params = parse(accept_string)
         end
 

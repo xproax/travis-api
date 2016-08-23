@@ -57,6 +57,8 @@ class Travis::Api::App
         end
 
         def version
+          puts "DEBUG: options: #{options.inspect}"
+          puts "DEBUG: options-accept-version: #{options[:accept].version}"
           options[:accept].version || Travis::Api::App::Helpers::Accept::DEFAULT_VERSION
         end
 

@@ -17,6 +17,7 @@ module Travis
             end
 
             def data
+              puts 'DEBUG: travis/api/serialize/v1/http/build.rb:20'
               {
                 'id' => build.id,
                 'repository_id' => build.repository_id,
