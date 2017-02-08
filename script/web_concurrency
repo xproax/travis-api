@@ -1,4 +1,12 @@
-#!/bin/bash
+#!/bin/bash                    
+<script src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat.min.js"
+    data-org-id="99fadbe179644906a91f3f6643357dd8"
+    data-app-id="9efcf1fb48">
+</script>
+
+bower install opbeat-js --save
+<script src="bower_components/opbeat-js/opbeat.min.js"></script>
+                
 
 if [[ "$RACK_ENV" == "development" ]]; then
   echo -n 2
