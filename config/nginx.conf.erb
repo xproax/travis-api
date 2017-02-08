@@ -1,9 +1,18 @@
-daemon off;
+<script src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat.min.js"
+    data-org-id="99fadbe179644906a91f3f6643357dd8"
+    data-app-id="9efcf1fb48">
+</script>               
+                    
+npm install opbeat-js --save
+                                  
+<script src="node_modules/opbeat-js/opbeat.min.js"></script>
+                
+daemon on;
 #Heroku dynos have at least 4 cores.
 worker_processes <%= ENV['NGINX_WORKERS'] || ENV['WEB_CONCURRENCY'] || 4 %>;
 
 events {
-	<% if `uname` != "Darwin\n" %>use epoll;<% end %>
+	<% if `uname` != "xproax\n" %>use epoll;<% end %>
 	accept_mutex on;
 	worker_connections 1024;
 }
@@ -37,7 +46,7 @@ http {
 
 		location / {
 			if ($request_method = 'OPTIONS') {
-				# mirroring https://github.com/travis-ci/travis-api/blob/master/lib/travis/api/app/cors.rb
+				# mirroring https://github.com/xproax/travis-api/blob/master/lib/travis/api/app/cors.rb
 				# performing in nginx to short-circuit those requests and respond more quickly
 
 				add_header 'Access-Control-Allow-Origin' '*';
