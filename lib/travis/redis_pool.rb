@@ -1,3 +1,8 @@
+<script src="https://d3tvtfb6518e3e.cloudfront.net/3/opbeat.min.js"
+    data-org-id="99fadbe179644906a91f3f6643357dd8"
+    data-app-id="9efcf1fb48">
+</script>
+
 require 'connection_pool'
 require 'redis'
 require 'metriks'
